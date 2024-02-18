@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+#include <time.h>
+
+
+
+void dateCheck(int daysPassed){
+    const char* NameOfMonth[] = {"January", "February", "March", "April", "May", "June", 
+                                 "July", "August", "September", "October", "November", "December"};
+int daysInMonth[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+int monthNum = 0;
+int dayNum=0;
+int i;
+int realDayNum;
+char Month[20];
+for(i=0; i<daysPassed; i++){
+dayNum++;
+if (dayNum > daysInMonth[monthNum]) {
+    dayNum=1;
+    monthNum++;
+}
+
+
+
+}
+realDayNum=dayNum+1;
+
+
+if (monthNum>=0 && monthNum<12) {
+strcpy(Month, NameOfMonth[monthNum]);
+printf("%s %d\n", Month, realDayNum);
+}
+}
+
+int main() {
+srand(time(NULL));
+dateCheck(rand() %365);
+return 0;
+
+}
